@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CompanyStoreService } from '../../../../../services/company/company-store.service';
 import { Specialist } from '../../../specialist/specialist.component';
+import { specialist, task } from '../../../../../services/company/company-interfaces';
 
 @Component({
   selector: 'task',
@@ -10,14 +11,14 @@ import { Specialist } from '../../../specialist/specialist.component';
   styleUrl: './task.component.scss'
 })
 export class TaskComponent implements OnInit{
-  @Input()task:any
-  specialist:any
-  constructor(public companyStoreService:CompanyStoreService){
-
-  }
+  @Input()task:task;
+  specialist:specialist;
+  constructor(public companyStoreService:CompanyStoreService){}
   ngOnInit(): void {
-   console.log(this.task);
-   this.specialist = this.companyStoreService.listSpecialists.find(item=>+item['id'] === +this.task['id']);
-   console.log('ftt',this.specialist);
+    this.specialist = this.companyStoreService.listSpecialists.find(item=>+item['id'] === +this.task['id']);
+    console.log(this.companyStoreService.startArrayTasks);
+  }
+  removeTask(){
+    this.companyStoreService.startArrayTasks = this.companyStoreService.startArrayTasks.filter(item=>!(+item['numId'] === +this.task['numId']))
   }
 }

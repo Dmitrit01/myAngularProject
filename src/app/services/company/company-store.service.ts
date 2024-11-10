@@ -5,7 +5,7 @@ import { specialist, task } from './company-interfaces';
   providedIn: 'root'
 })
 export class CompanyStoreService {
-  isFilter:boolean = false
+  isFilter:boolean = false;
   listSpecialists:specialist[] = [
     {
       firstname:'Вадим',
@@ -116,7 +116,7 @@ export class CompanyStoreService {
       id:12
     },
   ]
-  listSpecialistsFilter:specialist[] = []
-  startArrayTasks:task[] = []
-  constructor() { }
+  listSpecialistsFilter:specialist[] = [];
+  startArrayTasks:task[] = [];
+  constructor() {}
 }

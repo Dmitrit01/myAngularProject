@@ -4,6 +4,7 @@
     background: yellow;
     border-radius: 5px;
     padding: 5px;
+    position: relative;
     &__title{
         margin-bottom: 10px;
     }
@@ -12,4 +13,13 @@
         background: white;
         margin-bottom: 10px;
     }
+    &__btn{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+    
 }

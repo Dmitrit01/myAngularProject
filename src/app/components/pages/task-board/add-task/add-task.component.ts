@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule,FormsModule, FormGroup,FormControl, Validators } from '@angular/forms';
 import { NgIf,NgFor } from '@angular/common';
 import { CompanyStoreService } from '../../../../services/company/company-store.service';
-import { Specialist } from '../../specialist/specialist.component';
-
 
 @Component({
   selector: 'add-task',
@@ -14,10 +12,7 @@ import { Specialist } from '../../specialist/specialist.component';
 })
 export class AddTaskComponent implements OnInit{
   form:FormGroup;
-  
-  constructor(public companyStoreService:CompanyStoreService){
-
-  }
+  constructor(public companyStoreService:CompanyStoreService){}
   ngOnInit(){
     this.form = new FormGroup({
       title:new FormControl('',[Validators.required]),
@@ -27,7 +22,8 @@ export class AddTaskComponent implements OnInit{
   }
   submit(){
     console.log(this.form.value)
-    this.companyStoreService.startArrayTasks.push(this.form.value)
+    this.form.value.numId = ((Math.random()*1000)).toFixed();
+    this.companyStoreService.startArrayTasks.push(this.form.value);
     this.form.reset()
   }
 }
