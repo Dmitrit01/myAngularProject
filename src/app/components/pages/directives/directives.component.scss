@@ -1,0 +1,18 @@
+.directives{
+    padding: 5px 10px 0 10px;
+    &__title{
+       margin-bottom: 20px;
+    }
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        margin-top:15px ;
+    }
+    &__btn{
+        padding: 0 15px;
+        min-height: 30px;
+        border-radius: 10px;
+        background: rgb(219, 219, 255);
+        cursor: pointer;
+    }
+}

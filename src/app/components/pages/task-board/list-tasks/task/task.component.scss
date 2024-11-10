@@ -1,0 +1,15 @@
+.task{
+    border: 1px solid black;
+    margin: 10px 0;
+    background: yellow;
+    border-radius: 5px;
+    padding: 5px;
+    &__title{
+        margin-bottom: 10px;
+    }
+    &__descr{
+        padding: 5px;
+        background: white;
+        margin-bottom: 10px;
+    }
+}

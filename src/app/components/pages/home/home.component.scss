@@ -1,0 +1,18 @@
+.home{
+    padding: 15px 15px 0 15px;
+    &__buttons{
+        display: flex;
+      
+        align-items: flex-start;
+        gap: 5px;
+    }
+    &__btn{
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background: rgb(41, 41, 157);
+            color:white;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.basket {
+  padding: 15px 10px;
+}
+.basket__top{
+  display: flex;
+  gap:5px;
+}
+.basket__configuration{
+  display: flex;
+}
+.books-card {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+card {
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: rgba(244, 244, 0, 0.3);
+}
+
+.overallPrice{
+  background: red;
+  color: white;
+  padding: 5px 15px;
+  border:1px solid black;
+  border-radius: 5px;
+}
+.sort{
+  margin-left: 5px;
+}
+
+.basket__filter{
+  display: flex;
+  margin-left: 10px;
+  &-input:nth-child(1){
+    border-radius: 10px 0 0 10px;
+    padding-left: 10px;
+    width: 100%;
+    max-width: 150px;
+  }
+  &-input:nth-child(2){
+    border-radius: 0 10px 10px 0;
+    padding-left: 10px;
+    width: 100%;
+    max-width: 150px;
+  }
+  &-btn{
+    background: greenyellow;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+
+.clear__basket{
+  margin-left:15px;
+  padding: 0 15px;
+  background: red;
+  color:white;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.sort{
+  display: flex;
+  justify-content: space-between;
+  gap:10px;
+  
+  &__button{
+    padding: 0 10px;
+    border-radius: 5px;
+    background: greenyellow;
+    border: 1px solid gray;
+    cursor: pointer;
+  }
+}
+

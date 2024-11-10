@@ -1,0 +1,85 @@
+<div class="add-specialist">
+  <div class="specialist__wrapper">
+    <form
+      action=""
+      class="specialist__form form"
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+    >
+      <div class="form__block">
+        <p class="form__title">Укажите имя:</p>
+        <input
+          type="text"
+          class="form__text"
+          placeholder="укажите имя..."
+          formControlName="firstname"
+        />
+        <div class="form__validation" *ngIf="form.get('firstname').invalid && form.get('firstname').touched">
+            <small *ngIf ="form.get('firstname').errors['required']">Поле не может быть пустым</small>
+        </div>
+      </div>
+      <div class="form__block">
+        <p class="form__title">Укажите фамилию:</p>
+        <input
+          type="text"
+          class="form__text"
+          placeholder="укажите фамилию..."
+          formControlName="lastname"
+        />
+        <div class="form__validation" *ngIf="form.get('lastname').invalid && form.get('lastname').touched">
+            <small *ngIf ="form.get('lastname').errors['required']">Поле не может быть пустым</small>
+        </div>
+      </div>
+      <div class="form__block">
+        <p class="form__title">Укажите возраст:</p>
+        <input
+          type="text"
+          class="form__text"
+          placeholder="укажите возраст..."
+          formControlName="age"
+        />
+        <div class="form__validation" *ngIf="form.get('age').invalid && form.get('age').touched">
+          <small *ngIf ="form.get('age').errors['required']">Поле не может быть пустым</small>
+          <small *ngIf ="form.get('age').errors['onlyNumber']">Использовать можно только цифры</small>
+        </div>
+      </div>
+       <div class="form__block">
+        <p class="form__title">Укажите заработную плату:</p>
+        <input
+          type="text"
+          class="form__text"
+          placeholder="укажите возраст..."
+          formControlName="price"
+        />
+        <div class="form__validation" *ngIf="form.get('price').invalid && form.get('price').touched">
+          <small *ngIf ="form.get('price').errors['required']">Поле не может быть пустым</small>
+          <small *ngIf ="form.get('price').errors['onlyNumber']">Использовать можно только цифры</small>
+        </div>
+      </div>
+      <div class="form__radio">
+        <p class="form__title">Выберите пол:</p>
+        <div class="form__radio-person">
+          <input type="radio" id="man" name="person" value="man" formControlName="person"/>
+          <label class="form__label" for="man">Мужской</label>
+        </div>
+        <div class="form__radio-person">
+          <input type="radio" id="woman" name="person" value="woman" formControlName="person"/>
+          <label class="form__label" for="woman">Женский</label>
+        </div>
+      </div>
+     
+      <div class="form__block">
+        <p class="form__title">Укажите должность:</p>
+        <select name="" id="" class="form__choice" formControlName="job">
+          <option value="web">Web-дизайнер</option>
+          <option value="html">Html-верстальщик</option>
+          <option value="front">Frontend-разработчик</option>
+          <option value="back">Backend-разработчик</option>
+          <option value="full">Fullstack-разработчик</option>
+        </select>
+      </div>
+      
+      <button class="form__btn" type="submit" [disabled]="form['invalid']">Отправить</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="animations">
+  <go-back></go-back>
+  <div class="animations__box">
+    <div class="animations__btns">
+      <button (click)="animate()" class="animations__btn">Animate</button>
+      <button (click)="boxState = 'special' " class="animations__btn">Set Special State</button>
+      <button class="animations__btn" (click)="isVisible = !isVisible">Toggle Visibility</button>
+    </div>
+    <div class="box" [@box]="boxState" *ngIf="isVisible">
+      {{boxState | uppercase}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="basket">
+  <div class="basket__top">
+    
+    
+    <div class="basket__configuration" *ngIf="storeService.overallPrice; else priceBlock">
+      <div class="overallPrice">
+        <p>Товаров: {{storeService.basket.length}}   Цена: ${{ storeService.overallPrice }}</p>
+       
+      </div>
+      <div class="sort">
+        <button class="sort__button" (click)="sortIncreasePrice()">Цена по убыванию</button>
+        <button class="sort__button" (click)="sortDecreasePrice()">Цена по возрастанию</button>
+      </div>
+      <div class="basket__filter">
+        <input
+          type="text"
+          class="basket__filter-input"
+          [(ngModel)]="fromPrice"
+          (keydown)="numberValidation($event)"
+          placeholder="укажите цену от в $"
+        />
+        <input
+          type="text"
+          class="basket__filter-input"
+          [(ngModel)]="toPrice"
+          (keydown)="numberValidation($event)"
+         placeholder="укажите цену до в $"
+        />
+        <button class="basket__filter-btn" (click)="filterPrice()">применить фильтр по цене</button>
+        <button class="clear__basket" (click)="clear()">очистить корзину</button>
+    </div>
+  </div>
+  <ng-template #priceBlock>
+    <div class="overallPrice">
+      <p>Корзина пуста</p>
+    </div>
+    <div class="go-back">
+      <go-back></go-back>
+    </div>
+  </ng-template>
+  </div>
+  <div class="books-card">
+    <card *ngFor="let item of storeService.basket" [book]="item"></card>
+  </div>
+</div>

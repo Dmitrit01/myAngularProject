@@ -1,0 +1,9 @@
+.attributeDirectives{
+    margin-top: 25px;
+    &__text{
+        font-size: 24px;
+        padding: 5px;
+        margin-bottom: 20px;
+        cursor:pointer;
+    }
+}

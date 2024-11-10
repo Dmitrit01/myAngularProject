@@ -1,0 +1,84 @@
+<div class="list-specialist">
+  <div
+    class="list-specialist__inner"
+    *ngIf="companyStoreService.listSpecialists.length; else emptyListSpecialists"
+  >
+    <div class="list-specialist__configuration configuration">
+      <div class="configuration__price">
+        <button class="configuration__btn" (click)="salaryPlus()">
+          зарплаты по возраснаию
+        </button>
+        <button class="configuration__btn" (click)="salaryMinus()">
+          зарплаты по убыванию
+        </button>
+      </div>
+      <div class="configuration__age">
+        <button class="configuration__btn" (click)="agePlus()">
+          возраст по возраснаию
+        </button>
+        <button class="configuration__btn" (click)="ageMinus()">
+          возраст по убыванию
+        </button>
+      </div>
+      <div class="configuration__filter filter">
+        <div class="filter__radio">
+          <div class="radio">
+            <input type="radio" id="man" name="person" [(ngModel)]='valuePerson' value="man" [disabled]="companyStoreService.isFilter"/>
+            <label for="man">Мужской</label>
+          </div>
+          <div class="radio">
+            <input type="radio" id="woman" name="person"  [(ngModel)]="valuePerson" value="woman" [disabled]="companyStoreService.isFilter"/>
+            <label for="woman">Женский</label>
+          </div>
+        </div>
+        <div class="filter__job">
+          <select value="" [(ngModel)]="valueJob" [disabled]="companyStoreService.isFilter">
+            <option value=null>Отсутствует</option>
+            <option value="web">Web-дизайнер</option>
+            <option value="html">Html-верстальщик</option>
+            <option value="front">Frontend-разработчик</option>
+            <option value="back">Backend-разработчик</option>
+            <option value="full">Fullstack-разработчик</option>
+          </select>
+        </div>
+        <div class="filter__job"></div>
+        <button class="filter__btn" (click)="filter()">{{ companyStoreService.isFilter ? 'отключить фильтр' : 'применить фильтр'}}</button>
+      </div>
+      <div class="configuration__clear">
+        <button class="configuration__btn-clear" (click)="clear()">
+          Очистить
+        </button>
+      </div>
+    </div>
+    <div class="list-specialist__body">
+      <div class="card" *ngFor="let item of actualArraySpecialists">
+        <div
+          class="card__img"
+          [ngClass]="{
+                    card__purple:item['person'] === 'woman',
+                    card__yellow:item['person'] === 'man',
+                }"
+        >
+          <img
+            [src]="item['person'] === 'man' ? srcMan : srcWoman"
+            alt="person"
+          />
+        </div>
+        <hr />
+        <div class="card__information">
+          <p class="card__text">имя: {{ item["firstname"] }}</p>
+          <p class="card__text">фамилия: {{ item["lastname"] }}</p>
+          <p class="card__text">возраст: {{ item["age"] }}</p>
+          <p class="card__text">зарплата: {{ item["salary"] }}$</p>
+          <p class="card__text">должность: {{ item["job"] }}</p>
+        </div>
+        <button class="card__btn" (click)="removeSpecialist(item['id'])">
+          Удалить
+        </button>
+      </div>
+    </div>
+  </div>
+  <ng-template #emptyListSpecialists>
+    <h3>Список пуст...</h3>
+  </ng-template>
+</div>

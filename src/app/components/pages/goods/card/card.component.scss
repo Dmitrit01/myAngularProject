@@ -1,0 +1,50 @@
+.card-book{
+    padding: 5px 10px 150px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.img-book{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.price{
+    color:white;
+    background: red;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    display: inline-block;
+    width: auto;
+    position:absolute;
+    bottom: 100px;
+    left: calc(50% - 32px);
+}
+
+.descr{
+    position: absolute;
+    left: calc(50% - 45px);
+    bottom: 50px;
+    color:white;
+    background: green;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.basket{
+    padding: 5px;
+    border-radius:5px;
+    cursor:pointer;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 68px);
+}
+
+.red{
+    background: red;
+    color: white;
+}

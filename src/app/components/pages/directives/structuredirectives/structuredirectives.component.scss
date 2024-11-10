@@ -1,0 +1,14 @@
+.structureDirectives{
+    margin-top: 25px;
+    &__body{
+        border:1px dashed red;
+        padding: 15px;
+        border-radius:10px;
+    }
+    &__toggle{
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor:pointer;
+    }
+}

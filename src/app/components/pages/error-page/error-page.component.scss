@@ -1,0 +1,18 @@
+.error-page{
+    padding: 15px;
+    &__title{
+        text-align: center;
+        color:red;
+        font-size: 48px;
+        font-weight: bold;
+    }
+    &__navigate-home{
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__btn{
+        padding: 5px 5px 5px 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

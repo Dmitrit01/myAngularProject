@@ -1,0 +1,21 @@
+<div class="card-book">
+  <img [src]="book['image']" alt="" class="img-book" />
+  <h2>{{ book["title"] }}</h2>
+  <p>{{ book["subtitle"] }}</p>
+  <div class="price">
+    <p>{{ book["price"] }}</p>
+  </div>
+  <button class="descr" [routerLink]="['/good', book['isbn13']]">
+    Подробнее
+  </button>
+  <button
+    class="basket"
+   (click)="addDeleteBook()"
+    *ngIf="!isBasket; else basketBlock"
+  >
+    Добавить в корзину
+  </button>
+  <ng-template #basketBlock>
+    <button class="basket" (click)="addDeleteBook()" [class.red]="isBasket">Удалить из корзины</button>
+  </ng-template>
+</div>

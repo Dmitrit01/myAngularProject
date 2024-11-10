@@ -1,0 +1,38 @@
+<div class="good">
+  <h1 class="good__title">Описание товара</h1>
+  <div class="good__descr">
+    <div class="good__image">
+      <img [src]="this.image" alt="" />
+    </div>
+    <div class="good__params">
+      <p class="good__text">
+        Цена: <span>{{ price }}</span>
+      </p>
+      <p class="good__text">
+        Авторы: <span>{{ authors }}</span>
+      </p>
+      <p class="good__text">
+        Описание: <span>{{ descr }}</span>
+      </p>
+      <p class="good__text">
+        Язык: <span>{{ language }}</span>
+      </p>
+      <p class="good__text">
+        Публицист: <span>{{ publisher }}</span>
+      </p>
+      <p class="good__text">
+        Рейтинг: <span>{{ rating }}</span>
+      </p>
+      <p class="good__text">
+        Название: <span>{{ subtitle }}</span>
+      </p>
+      <p>
+        Заглавие: <span>{{ title }}</span>
+      </p>
+      <p class="good__text">
+        Год: <span>{{ year }}</span>
+      </p>
+      <go-back></go-back>
+    </div>
+  </div>
+</div>

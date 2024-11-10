@@ -1,0 +1,53 @@
+<div class="goods">
+  <div class="goods__top">
+    <go-back></go-back>
+    <input
+      type="text"
+      class="goods__title-movie"
+      placeholder="Введите название фильма..."
+      [(ngModel)]="storeService.titleMovie"
+    />
+  </div>
+  <div class="buttons">
+    <button class="active" (click)="loadGoods()">Загрузить</button>
+    <button class="disabled" (click)="clear()">Очистить</button>
+  </div>
+  <div class="pagination" *ngIf="storeService.books.length">
+    <button
+      [ngClass]="{
+        disabled: storeService.page === 1,
+        active: storeService.page !== 1
+      }"
+      [disabled]="storeService.page === 1"
+      (click)="goToPrevPage()"
+    >
+      prev
+    </button>
+    <button
+      [ngClass]="{
+        disabled: storeService.page === storeService.allPages,
+        active: storeService.page !== storeService.allPages
+      }"
+      [disabled]="storeService.page === storeService.allPages"
+      (click)="goToNextPage()"
+    >
+      next
+    </button>
+    <div class="page">
+      <p>page:{{ storeService.page }}</p>
+    </div>
+    <div class="page">
+      <p>allPages:{{ storeService.allPages }}</p>
+    </div>
+  </div>
+
+  <ng-template [ngIf]="!storeService.books.length && !isLoading">
+    <p class="empty">Список товаров пуст...</p>
+  </ng-template>
+  <div class="books-card">
+    <card *ngFor="let item of storeService.books" [book]="item"></card>
+  </div>
+  <ng-template [ngIf]="isLoading">
+    <p class="empty">Загрузка...</p>
+  </ng-template>
+</div>

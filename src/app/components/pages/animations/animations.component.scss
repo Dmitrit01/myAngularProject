@@ -1,0 +1,22 @@
+.animations{
+    padding: 5px 5px 0 15px;
+    &__btns{
+        display: flex;
+        margin-bottom: 40px;
+        gap:0 10px;
+    }
+    &__btn{
+        padding: 5px 10px 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}

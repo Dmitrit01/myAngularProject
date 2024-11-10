@@ -1,0 +1,23 @@
+.wrapper{
+    background: url(../assets/bg.jpg) center/cover no-repeat;
+    min-height: 100vh;
+    padding-top: 10px;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1220px;
+    width: 100%;
+}
+
+.body{
+    margin-top: -5px;
+    background: rgba(#fff,0.8);
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 10px);
+    border-radius: 5px;
+    overflow: hidden;
+}
+

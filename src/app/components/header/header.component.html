@@ -1,0 +1,44 @@
+<div class="header">
+  <div class="header__box-time">
+    <div class="header__time">
+      <p>{{ date$ | async | date : "yyyy" }}</p>
+    </div>
+    <div class="header__time">
+      <p>{{ date$ | async | date : "MMMM d" }}</p>
+    </div>
+    <div class="header__time">
+      <p>{{ date$ | async | date : "H:mm:ss" }}</p>
+    </div>
+  </div>
+
+  <ul class="list">
+    <li
+      class="list__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a href="#" class="list__link" routerLink="/">Home</a>
+    </li>
+    <li class="list__item" routerLinkActive="active">
+      <a href="#" class="list__link" routerLink="/goods">Товары</a>
+    </li>
+    <li class="list__item" routerLinkActive="active">
+      <a href="#" class="list__link" routerLink="/basket">Корзина</a>
+    </li>
+    <li class="list__item" routerLinkActive="active">
+      <a href="#" class="list__link" routerLink="/form">форма</a>
+    </li>
+    <li class="list__item" routerLinkActive="active">
+      <a href="#" class="list__link" routerLink="/directives">Директивы</a>
+    </li>
+    <li class="list__item" routerLinkActive="active">
+      <a href="#" class="list__link" routerLink="/animations">Анимации</a>
+    </li>
+    <li class="list__item" routerLinkActive="active">
+      <a href="#" class="list__link" routerLink="/specialist">It Специалисты</a>
+    </li>
+    <li class="list__item" routerLinkActive="active">
+      <a href="#" class="list__link" routerLink="/taskboard">Доска задач</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,104 @@
+.form-page {
+  padding: 15px 10px 5px 10px;
+  &__title {
+    margin-bottom: 15px;
+  }
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.form {
+  &__block {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 7px 12px 7px 12px;
+    margin-bottom: 15px;
+    width: 600px;
+  }
+  &__title{
+    margin-bottom: 7px;
+  }
+
+  &__text{
+    margin-bottom: 5px;
+  }
+  &__pass{
+    position: relative;
+  }
+  &__eye{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 10px);
+    cursor: pointer;
+  }
+  &__input {
+    padding: 5px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+    width: 100%;
+
+    &.ng-invalid.ng-touched{
+      border:2px solid red;
+      &:focus{
+        outline: 1px solid red;
+      }
+    }
+    &.ng-valid{
+      border:2px solid green;
+    }
+  }
+  &__select {
+    padding: 5px;
+    margin: 5px 10px 5px 0;
+    border-radius: 5px;
+  }
+  &__btn {
+    padding: 0 10px;
+    background: rgb(53, 53, 53);
+    color: white;
+    min-height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  &__btn-submit {
+    padding: 0 10px;
+    background: rgb(53, 53, 53);
+    color: white;
+    min-height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    &:disabled{
+      background: rgb(255, 0, 0);
+    }
+  }
+  
+}
+
+.validation{
+  &__password{
+    border: 1px solid red;
+  }
+  small{
+    padding: 5px;
+    color:red;
+    font-size:17px;
+  }
+}
+
+.skills{
+  margin-bottom: 10px;
+  &__text{
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+

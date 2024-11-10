@@ -1,0 +1,52 @@
+.form {
+    width:100%;
+    max-width: 300px;
+    &__block{
+      border:1px solid black;
+      border-radius: 5px;
+      padding: 10px 15px 5px 15px;
+      margin-bottom: 10px;
+    }
+    &__validation small{
+        color: red;
+    }
+    &__title{
+      margin-bottom: 3px;
+    }
+    &__radio{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-bottom: 5px;
+      row-gap: 5px;
+      border:1px solid black;
+      border-radius: 10px;
+      padding: 10px 15px 5px 15px;
+    }
+    &__label{
+      margin-left: 5px;
+      cursor:pointer;
+    }
+    &__text {
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+    &__text.ng-touched.ng-invalid{
+        border: 1px solid red;
+    }
+    &__choice {
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    &__btn{
+      min-height: 30px;
+      max-width: 90px;
+      border-radius: 5px;
+      width: 100%;
+      border: 1px solid #a0a0a0;
+      cursor: pointer;
+    }
+  }

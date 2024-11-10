@@ -1,0 +1,72 @@
+<div class="add-task">
+  <div class="task__wrapper">
+    <form
+      action=""
+      class="task__form form"
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      
+    >
+      <div class="form__block">
+        <p class="form__title">Укажите название задачи:</p>
+        <input
+          type="text"
+          class="form__text"
+          placeholder="укажите имя..."
+          formControlName="title"
+         
+        />
+        <div
+          class="form__validation"
+          *ngIf="form.get('title').invalid && form.get('title').touched"
+        >
+          <small *ngIf="form.get('title').errors['required']"
+            >Поле не может быть пустым</small
+          >
+        </div>
+      </div>
+      <div class="form__block">
+        <p class="form__title">Описание задачи:</p>
+        <textarea
+          name=""
+          id=""
+          class="form__description"
+          resize="none"
+          formControlName="description"
+         
+        ></textarea>
+        <div
+          class="form__validation"
+          *ngIf="
+            form.get('description').invalid && form.get('description').touched
+          "
+        >
+          <small *ngIf="form.get('description').errors['required']"
+            >Поле не может быть пустым</small
+          >
+        </div>
+      </div>
+      <div
+        class="form__block"
+        *ngIf="companyStoreService.listSpecialists.length; else emptyBlock"
+      >
+        <select name="specialists"  formControlName="id">
+          <option
+            [value]="item['id']"
+            *ngFor="let item of companyStoreService.listSpecialists"
+        >
+            {{ item["lastname"] }} {{ item["firstname"] }}:{{ item["job"] }}
+          </option>
+        </select>
+    </div>
+      <ng-template #emptyBlock>
+        <div class="form__block">
+          <p>Список пуст It специалистов</p>
+        </div>
+      </ng-template>
+      <button class="form__btn" type="submit" [disabled]="form['invalid']">
+        Отправить
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,131 @@
+<div class="form-page">
+  <go-back></go-back>
+  <div class="container">
+    <h1 class="form-page__title">Формы</h1>
+    <form action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form__block">
+        <p>Email</p>
+        <input
+          type="text"
+          placeholder="Введите email..."
+          class="form__input"
+          formControlName="email"
+        />
+        <div
+          class="validation"
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+        >
+          <small *ngIf="form.get('email').errors['email']"
+            >Введите коректный email</small
+          >
+          <small *ngIf="form.get('email').errors['required']"
+            >Поле email не может быть пустым</small
+          >
+          <small *ngIf="form.get('email').errors['restrictedEmail']"
+            >Email {{ form.get("email").value }} запрещен</small
+          >
+        </div>
+      </div>
+      <div class="form__block">
+        <p>Пароль</p>
+        <div class="form__pass">
+          <img [src]="srcEye" alt="" class="form__eye" (click)="changeEye()" />
+          <input
+            [type]="typeInput"
+            placeholder="Введите пароль..."
+            class="form__input"
+            formControlName="password"
+          />
+        </div>
+
+        <div
+          class="validation"
+          *ngIf="form.get('password').invalid && form.get('password').touched"
+        >
+          <small *ngIf="form.get('password').errors['required']"
+            >Пароль не может быть пустым</small
+          >
+          <small *ngIf="form.get('password').errors['minlength']"
+            >Длина должна быть не менее
+            {{ form.get("password").errors["minlength"].requiredLength }}
+            символов.<br />
+            Cейчас кол-во символов
+            {{ form.get("password").errors["minlength"].actualLength }}</small
+          >
+          <div
+            class="validation__password"
+            *ngIf="form.get('password').errors['minNumberDifferentCharacters']"
+          >
+            <small
+              >Минимум цифр:({{ form.get("password").errors["actualNumber"] }})
+              {{ form.get("password").errors["number"] }}</small
+            ><br />
+            <small
+              >Минимум русских символов нижнего регистра:({{
+                form.get("password").errors["actualLowerRus"]
+              }}) {{ form.get("password").errors["lowerRus"] }}</small
+            ><br />
+            <small
+              >Минимум русских символов высокого регистра:({{
+                form.get("password").errors["actualUpperRus"]
+              }}) {{ form.get("password").errors["upperRus"] }}</small
+            ><br />
+            <small
+              >Минимум латинских символов нижнего регистра:({{
+                form.get("password").errors["actualLowerEngl"]
+              }}) {{ form.get("password").errors["lowerEngl"] }}</small
+            ><br />
+            <small
+              >Минимум латинских символов высокого регистра:({{
+                form.get("password").errors["actualUpperEngl"]
+              }}) {{ form.get("password").errors["upperEngl"] }}</small
+            ><br />
+          </div>
+        </div>
+      </div>
+      <div class="form__block" formGroupName="address">
+        <h2 class="form__title">Адрес</h2>
+        <p class="form__text">Страна</p>
+        <select class="form__select" formControlName="country">
+          <option value="by">Беларусь</option>
+          <option value="ua">Украина</option>
+          <option value="ru">Россия</option>
+        </select>
+        <input
+          type="text"
+          class="form__input"
+          placeholder="Введите город..."
+          formControlName="city"
+        />
+        <button class="form__btn" type="button" (click)="setCapital()">
+          Выбрать столицу
+        </button>
+      </div>
+      <div class="form__block" formGroupName="skills">
+        <h2 class="form__title">Ваши навыки(мax7):</h2>
+        <button class="form__btn" type="button" (click)="addSkills()">
+          Добавить умение</button
+        ><br />
+        <div
+          class="skills"
+          *ngFor="let item of form.get('skills')['controls']; let indx = index"
+        >
+          <label>Умение {{ indx + 1 }} </label>
+          <input type="text" class="form__input" [formControlName]="indx" />
+          <div
+            class="validation"
+            *ngIf="
+              form.get('skills')['controls'][indx].invalid &&
+              form.get('skills')['controls'][indx].touched
+            "
+          >
+            <small class="skills__small">Навыки не могут быть пустыми</small>
+          </div>
+        </div>
+      </div>
+      <button class="form__btn-submit" type="submit" [disabled]="form.invalid" (click)="submit()">
+        Отправить
+      </button>
+    </form>
+  </div>
+</div>

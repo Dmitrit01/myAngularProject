@@ -1,0 +1,39 @@
+.header{
+    background: rgba(#DCF400FF,0.5);
+    padding: 5px 15px 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 48px;
+    &__box-time{
+        display: flex;
+        gap:0 5px;
+    }
+    &__time{
+        background: white;
+        border-radius: 5px;
+        padding: 5px 15px;
+        border: 1px solid black;
+    }
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    column-gap:10px;
+    &__item{
+        border-radius: 5px;
+        padding: 2px 5px 2px 5px;
+        background: white;
+        cursor:pointer;
+    }
+    &__link:focus{
+        color:black;
+    }
+}
+
+
+.active{
+    outline:3px solid rgb(0, 0, 113);
+    background: rgb(192, 231, 255);
+}
