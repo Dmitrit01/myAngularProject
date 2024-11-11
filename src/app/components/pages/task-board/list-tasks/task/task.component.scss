@@ -1,7 +1,6 @@
 .task{
     border: 1px solid black;
     margin: 10px 0;
-    background: yellow;
     border-radius: 5px;
     padding: 5px;
     position: relative;
@@ -13,7 +12,7 @@
         background: white;
         margin-bottom: 10px;
     }
-    &__btn{
+    &__close{
         position: absolute;
         top: 5px;
         right: 5px;
@@ -21,5 +20,36 @@
         width: 20px;
         height: 20px;
     }
-    
+    &__btns{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__btn{
+        padding: 5px;
+        background: rgb(0, 208, 38);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+.disabled{
+    background: rgb(196, 0, 0);
+}
+.active{
+    background: green;
+}
+
+.red{
+    background: rgb(255, 94, 94);
+}
+.blue{
+    background: rgb(84, 84, 248);
+}
+.purple{
+    background: rgb(255, 40, 255);
+}
+.green{
+    background: greenyellow;
 }

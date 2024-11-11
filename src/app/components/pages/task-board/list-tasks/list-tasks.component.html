@@ -1,21 +1,23 @@
 <div class="list-tasks">
     <div class="list-tasks__column first-column">
-        <h3 class="list-tasks__title">Очередь</h3>
+        <h3 class="list-tasks__title">Очередь: {{companyStoreService.startArrayTasks.length}}</h3>
         <hr>
         <task *ngFor="let item of  companyStoreService.startArrayTasks" [task]="item"></task>
-        
     </div>
     <div class="list-tasks__column second-column">
-        <h3 class="list-tasks__title">В процессе</h3>
+        <h3 class="list-tasks__title">В процессе: {{companyStoreService.progressArrayTasks.length}}</h3>
         <hr>
+        <task *ngFor="let item of  companyStoreService.progressArrayTasks" [task]="item"></task>
     </div>
     <div class="list-tasks__column third-column ">
-        <h3 class="list-tasks__title">Тестируем</h3>
+        <h3 class="list-tasks__title">Тестируем: {{companyStoreService.testArrayTasks.length}}</h3>
         <hr>
+        <task *ngFor="let item of  companyStoreService.testArrayTasks" [task]="item"></task>
     </div>
     <div class="list-tasks__column fourth-column ">
-        <h3 class="list-tasks__title">Готово</h3>
+        <h3 class="list-tasks__title">Готово: {{companyStoreService.readyArrayTasks.length}}</h3>
         <hr>
+        <task *ngFor="let item of  companyStoreService.readyArrayTasks" [task]="item"></task>
     </div>
     
 </div>

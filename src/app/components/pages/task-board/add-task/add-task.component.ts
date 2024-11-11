@@ -23,6 +23,7 @@ export class AddTaskComponent implements OnInit{
   submit(){
     console.log(this.form.value)
     this.form.value.numId = ((Math.random()*1000)).toFixed();
+    this.form.value.state = 'start';
     this.companyStoreService.startArrayTasks.push(this.form.value);
     this.form.reset()
   }
